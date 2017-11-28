@@ -1,6 +1,6 @@
-export default {
-  React: {
-    title: "React",
+export default [
+  {
+    title: "React fromo demo-decks",
     questions: [
       {
         question: "What is React?",
@@ -12,8 +12,8 @@ export default {
       }
     ]
   },
-  JavaScript: {
-    title: "JavaScript",
+  {
+    title: "JavaScript from demo-decks",
     questions: [
       {
         question: "What is a closure?",
@@ -22,4 +22,4 @@ export default {
       }
     ]
   }
-};
+];
