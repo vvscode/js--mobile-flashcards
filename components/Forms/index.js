@@ -1,2 +1,2 @@
-export * from "./NewCard";
-export * from "./NewDeck";
+export * from './NewCard';
+export * from './NewDeck';

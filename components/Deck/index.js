@@ -1,2 +1,2 @@
-export * from "./Deck";
-export * from "./DeckList";
+export * from './Deck';
+export * from './DeckList';
