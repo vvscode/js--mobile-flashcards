@@ -29,8 +29,6 @@ export default new StackNavigator(
       },
     },
     Deck: screen(screens.DeckScreen),
-    NewQuestion: screens.NewQuestionScreen,
-    Quiz: screen(screens.QuizScreen),
   },
   {
     navigationOptions: {
