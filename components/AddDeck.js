@@ -9,7 +9,7 @@ import {
 import {createDeck} from '../utils/api';
 import {connect} from 'react-redux';
 import {addDeck} from '../actions';
-import {gray, offwhite} from '../utils/colors';
+import * as colors from '../utils/colors';
 import TextInButton from './TextInButton';
 
 class AddDeck extends Component {
@@ -21,11 +21,10 @@ class AddDeck extends Component {
     const {decks} = this.props;
 
     if (decks[entry.text]) {
-      Alert.alert(
+      return Alert.alert(
         'Deck Exists',
         'Aborting! A deck with that name already exists'
       );
-      return;
     } else {
       const newDeck = {[entry.text]: {title: entry.text, questions: []}};
 
@@ -33,10 +32,9 @@ class AddDeck extends Component {
       createDeck(newDeck);
 
       this.setState({text: ''});
-      this.props.navigation.navigate('IndividualDeckView', {
+      return this.props.navigation.navigate('IndividualDeckView', {
         title: entry.text,
       });
-      return;
     }
   };
   render() {
@@ -63,14 +61,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 25,
-    backgroundColor: offwhite,
+    backgroundColor: colors.BACKGROUND_LIGHT,
   },
   input: {
     width: 200,
     height: 44,
     padding: 8,
     borderWidth: 1,
-    borderColor: gray,
+    borderColor: colors.BORDER_COLOR,
     margin: 20,
   },
 });

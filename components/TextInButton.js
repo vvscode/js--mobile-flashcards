@@ -1,6 +1,33 @@
 import React from 'react';
 import {Platform, StyleSheet, Text, TouchableOpacity} from 'react-native';
-import {blue, white} from '../utils/colors';
+import * as colors from '../utils/colors';
+
+const styles = StyleSheet.create({
+  iosBtn: {
+    backgroundColor: colors.BACKGROUND_DARK,
+    padding: 10,
+    borderRadius: 7,
+    height: 45,
+    marginLeft: 40,
+    marginRight: 40,
+  },
+  AndroidBtn: {
+    backgroundColor: colors.BACKGROUND_DARK,
+    padding: 10,
+    paddingLeft: 30,
+    paddingRight: 30,
+    height: 45,
+    borderRadius: 2,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  btnText: {
+    color: colors.BACKGROUND_LIGHT,
+    fontSize: 22,
+    textAlign: 'center',
+  },
+});
 
 const btnStyle = Platform.OS === 'ios' ? styles.iosBtn : styles.AndroidBtn;
 
@@ -12,29 +39,4 @@ const TextInButton = ({children, onPress, style = {}}) => (
 
 export default TextInButton;
 
-const styles = StyleSheet.create({
-  iosBtn: {
-    backgroundColor: blue,
-    padding: 10,
-    borderRadius: 7,
-    height: 45,
-    marginLeft: 40,
-    marginRight: 40,
-  },
-  AndroidBtn: {
-    backgroundColor: blue,
-    padding: 10,
-    paddingLeft: 30,
-    paddingRight: 30,
-    height: 45,
-    borderRadius: 2,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  btnText: {
-    color: white,
-    fontSize: 22,
-    textAlign: 'center',
-  },
-});
+

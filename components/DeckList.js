@@ -10,9 +10,9 @@ import {connect} from 'react-redux';
 import {receiveDecks} from '../actions';
 import {fetchDecks} from '../utils/api';
 import DecksListItem from './DecksListItem';
-import {white} from '../utils/colors';
+import * as colors from '../utils/colors';
 
-class PrimaryView extends Component {
+class DeckList extends Component {
   componentDidMount() {
     const {dispatch} = this.props;
 
@@ -42,6 +42,7 @@ class PrimaryView extends Component {
           data={Object.values(decks).sort((a, b) => a.title > b.title)}
           renderItem={this.renderItem}
           keyExtractor={(item, index) => index}
+          style={styles.list}
         />
       </View>
     );
@@ -53,8 +54,12 @@ const mapStateToProps = (state) => ({
 });
 
 const styles = StyleSheet.create({
+  list: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
   item: {
-    backgroundColor: white,
+    backgroundColor: colors.BACKGROUND_LIGHT,
     borderRadius: Platform.OS === 'ios' ? 16 : 2,
     padding: 20,
     marginLeft: 10,
@@ -71,4 +76,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps)(PrimaryView);
+export default connect(mapStateToProps)(DeckList);

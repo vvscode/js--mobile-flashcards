@@ -1,20 +1,12 @@
 import React from 'react';
-import {View, StatusBar} from 'react-native';
+import {View} from 'react-native';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import reducer from './reducers';
-import {blue} from './utils/colors';
-import {Constants} from 'expo';
+import * as colors from './utils/colors';
 import {setLocalNotification} from './utils/helpers';
 import Navigator from './utils/Navigator';
-
-function UdaciStatusBar({backgroundColor, ...props}) {
-  return (
-    <View style={{backgroundColor, height: Constants.statusBarHeight}}>
-      <StatusBar translucent backgroundColor={backgroundColor} {...props} />
-    </View>
-  );
-}
+import StatusBar from './components/StatusBar';
 
 export default class App extends React.Component {
   componentDidMount() {
@@ -25,7 +17,7 @@ export default class App extends React.Component {
     return (
       <Provider store={createStore(reducer)}>
         <View style={{flex: 1}}>
-          <UdaciStatusBar backgroundColor={blue} barStyle="light-content" />
+          <StatusBar backgroundColor={colors.BACKGROUND_COLOR} barStyle="light-content" />
           <Navigator />
         </View>
       </Provider>

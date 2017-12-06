@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import {ltBlue, offwhite} from '../utils/colors';
+import * as colors from '../utils/colors';
 import {clearLocalNotification} from '../utils/helpers';
 import TextInButton from './TextInButton';
 
@@ -28,7 +28,7 @@ export default class QuizFinale extends Component {
             Reset Quiz
           </TextInButton>
           <TextInButton
-            style={{backgroundColor: ltBlue}}
+            style={{backgroundColor: colors.BTN_COLOR_LIGTH}}
             onPress={() => navigation.goBack(null)}
           >
             Back To Deck
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     paddingTop: 5,
-    backgroundColor: offwhite,
+    backgroundColor: colors.BACKGROUND_LIGHT,
   },
   group: {
     flex: 1,
@@ -53,6 +53,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingTop: 5,
     padding: 5,
-    backgroundColor: offwhite,
+    backgroundColor: colors.BACKGROUND_LIGHT,
   },
 });

@@ -6,7 +6,7 @@ import {
   Text,
   TextInput,
 } from 'react-native';
-import {gray, offwhite} from '../utils/colors';
+import * as colors from '../utils/colors';
 import {addCard} from '../actions';
 import {connect} from 'react-redux';
 import {addCardDeck} from '../utils/api';
@@ -82,14 +82,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingTop: 25,
-    backgroundColor: offwhite,
+    backgroundColor: colors.BACKGROUND_LIGHT,
   },
   input: {
     width: 300,
     height: 44,
     padding: 8,
     borderWidth: 1,
-    borderColor: gray,
+    borderColor: colors.BORDER_COLOR,
     margin: 20,
   },
 });

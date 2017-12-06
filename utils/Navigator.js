@@ -1,34 +1,30 @@
-import React, {createReactClass} from 'react';
+import React from 'react';
 import {StackNavigator, TabNavigator} from 'react-navigation';
 import {FontAwesome, Ionicons} from '@expo/vector-icons';
-import {blue, white} from './colors';
+import * as colors from './colors';
 import {Platform} from 'react-native';
 import AddDeck from '../components/AddDeck';
-import PrimaryView from '../components/PrimaryView';
+import DeckList from '../components/DeckList';
 import QuizView from '../components/QuizView';
 import IndividualDeckView from '../components/IndividualDeckView';
 import NewQuestionView from '../components/NewQuestionView';
 
 export const Tabs = new TabNavigator(
   {
-    PrimaryView: {
-      screen: PrimaryView,
+    DeckList: {
+      screen: DeckList,
       navigationOptions: {
-        tabBarLabel: 'Created Decks',
-        tabBarIcon: createReactClass({
-          displayName: 'list-of-decks-bar-icon',
-          render: ({tintColor}) => <Ionicons name="ios-bookmarks" size={30} color={tintColor} />,
-        }),
+        tabBarLabel: 'Decks',
+        /* eslint-disable react/display-name */
+        tabBarIcon: ({tintColor}) => <Ionicons name="ios-bookmarks" size={30} color={tintColor} />,
       },
     },
     AddDeck: {
       screen: AddDeck,
       navigationOptions: {
-        tabBarLabel: 'Add Deck',
-        tabBarIcon: createReactClass({
-          displayName: 'create-deck-bar-icon',
-          render: ({tintColor}) => <FontAwesome name="plus-square" size={30} color={tintColor} />,
-        }),
+        tabBarLabel: 'Add',
+        /* eslint-disable react/display-name */
+        tabBarIcon: ({tintColor}) => <FontAwesome name="plus-square" size={30} color={tintColor} />,
       },
     },
   },
@@ -37,10 +33,10 @@ export const Tabs = new TabNavigator(
       header: null,
     },
     tabBarOptions: {
-      activeTintColor: Platform.OS === 'ios' ? blue : white,
+      activeTintColor: Platform.OS === 'ios' ? colors.BACKGROUND_DARK : colors.BACKGROUND_LIGTH,
       style: {
         height: 56,
-        backgroundColor: Platform.OS === 'ios' ? white : blue,
+        backgroundColor: Platform.OS === 'ios' ? colors.BACKGROUND_LIGTH : colors.BACKGROUND_DARK,
         shadowColor: 'rgba(0, 0, 0, 0.24)',
         shadowOffset: {
           width: 0,
@@ -61,9 +57,9 @@ export default new StackNavigator({
   IndividualDeckView: {
     screen: IndividualDeckView,
     navigationOptions: {
-      headerTintColor: white,
+      headerTintColor: colors.BACKGROUND_LIGTH,
       headerStyle: {
-        backgroundColor: blue,
+        backgroundColor: colors.BACKGROUND_DARK,
       },
     },
   },
@@ -71,9 +67,9 @@ export default new StackNavigator({
     screen: NewQuestionView,
     navigationOptions: {
       title: 'Add Card',
-      headerTintColor: white,
+      headerTintColor: colors.BACKGROUND_LIGTH,
       headerStyle: {
-        backgroundColor: blue,
+        backgroundColor: colors.BACKGROUND_DARK,
       },
     },
   },
@@ -81,9 +77,9 @@ export default new StackNavigator({
     screen: QuizView,
     navigationOptions: {
       title: 'Quiz',
-      headerTintColor: white,
+      headerTintColor: colors.BACKGROUND_LIGTH,
       headerStyle: {
-        backgroundColor: blue,
+        backgroundColor: colors.BACKGROUND_DARK,
       },
     },
   },

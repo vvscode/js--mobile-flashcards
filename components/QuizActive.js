@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
-import {offwhite} from '../utils/colors';
+import * as colors from '../utils/colors';
 import QuizRemaining from './QuizRemaining';
 import QuizScoring from './QuizScoring';
 import QuizQAFlipper from './QuizQAFlipper';
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     paddingTop: 5,
-    backgroundColor: offwhite,
+    backgroundColor: colors.BACKGROUND_LIGHT,
   },
   group: {
     flex: 1,
@@ -52,6 +52,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingTop: 5,
     padding: 10,
-    backgroundColor: offwhite,
+    backgroundColor: colors.BACKGROUND_LIGHT,
   },
 });

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import {Animated, StyleSheet, Text, View} from 'react-native';
-import {gray, ltBlue, offwhite} from '../utils/colors';
+import * as colors from '../utils/colors';
 import TextInButton from './TextInButton';
 
 class IndivdualDeckView extends Component {
@@ -31,11 +31,11 @@ class IndivdualDeckView extends Component {
       <View style={styles.container}>
         <View style={[styles.group, {flex: 3}]}>
           <Animated.Text style={{fontSize: 40, transform: [{scale: bounceValue}]}}>{title}</Animated.Text>
-          <Text style={{fontSize: 24, color: gray}}>cards: {questions.length}</Text>
+          <Text style={{fontSize: 24, color: colors.TEXT_COLOR}}>cards: {questions.length}</Text>
         </View>
         <View style={[styles.group, {flex: 2, justifyContent: 'space-around'}]}>
           <TextInButton
-            style={{backgroundColor: ltBlue}}
+            style={{backgroundColor: colors.BTN_COLOR_LIGTH}}
             onPress={() => {
               this.props.navigation.navigate('NewQuestionView', {
                 title,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 25,
-    backgroundColor: offwhite,
+    backgroundColor: colors.BACKGROUND_LIGHT,
   },
   group: {
     flex: 1,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingTop: 5,
     padding: 5,
-    backgroundColor: offwhite,
+    backgroundColor: colors.BACKGROUND_LIGHT,
   },
 });
 

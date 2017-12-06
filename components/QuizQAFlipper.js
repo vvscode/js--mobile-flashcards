@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {gray} from '../utils/colors';
+import * as colors from '../utils/colors';
 import TextButton from './TextButton';
 
 export default class QuizQAFlipper extends Component {
@@ -13,7 +13,7 @@ export default class QuizQAFlipper extends Component {
           <Text style={{fontSize: 32}}>{ansOrQuesView(question, answer, showAnswer)}</Text>
           <TextButton
             onPress={toggleQA}
-            style={{fontSize: 16, color: gray}}>{showAnswer ? ('Question') : ( 'Answer')}
+            style={{fontSize: 16, color: colors.TEXT_COLOR}}>{showAnswer ? ('Question') : ( 'Answer')}
           </TextButton>
         </View>
       </View>
