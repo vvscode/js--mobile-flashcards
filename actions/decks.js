@@ -4,6 +4,12 @@ export const getDecks = () => ({
   type: TYPES.DECKS_GET,
 });
 
-export const createDeck = () => ({
+export const createDeck = (title) => ({
   type: TYPES.DECKS_CREATE,
+  deck: {
+    [title]: {
+      title,
+      questions: [],
+    },
+  },
 });

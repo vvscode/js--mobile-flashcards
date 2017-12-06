@@ -25,8 +25,8 @@ export class PureDeckList extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  decks: state,
+const mapStateToProps = ({decks}, ownProps) => ({
+  decks,
 });
 
 export const DeckList = connect(mapStateToProps)(PureDeckList);
