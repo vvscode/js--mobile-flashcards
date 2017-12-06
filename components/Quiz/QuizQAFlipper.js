@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import * as colors from '../utils/colors';
-import {TextButton} from './common';
+import * as colors from '../../utils/colors';
+import {TextButton} from '../common/index';
 
 export default class QuizQAFlipper extends Component {
   render() {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
-import * as colors from '../utils/colors';
+import * as colors from '../../utils/colors';
 import QuizRemaining from './QuizRemaining';
 import QuizScoring from './QuizScoring';
 import QuizQAFlipper from './QuizQAFlipper';

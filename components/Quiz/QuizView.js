@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import QuizActive from './QuizActive';
 import QuizFinale from './QuizFinale';
 
-export default class QuizView extends Component {
+export class QuizView extends Component {
   state = {
     idx: 0,
     nCorrect: 0,

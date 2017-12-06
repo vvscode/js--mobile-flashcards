@@ -6,11 +6,11 @@ import {
   Text,
   TextInput,
 } from 'react-native';
-import * as colors from '../utils/colors';
-import {addCard} from '../actions';
+import * as colors from '../../utils/colors';
+import {addCard} from '../../actions/index';
 import {connect} from 'react-redux';
-import {addCardDeck} from '../utils/api';
-import {TextInButton} from './common';
+import {addCardDeck} from '../../utils/api';
+import {TextInButton} from '../common/index';
 
 class NewQuestionView extends Component {
   state = {
@@ -99,4 +99,4 @@ function mapStateToProps(state) {
     decks: state,
   };
 }
-export default connect(mapStateToProps)(NewQuestionView);
+export const NewQuestionViewConnected = connect(mapStateToProps)(NewQuestionView);
