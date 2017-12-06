@@ -2,22 +2,24 @@ import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import * as colors from '../../utils/colors';
 
-export default function DecksListItem({title, questions}) {
-  return (
-    <View style={styles.deck}>
-      <View>
-        <Text style={{fontSize: 20}}>{title}</Text>
-        <Text style={{fontSize: 16, color: colors.TEXT_COLOR}}>
-          cards: {questions.length}
-        </Text>
-      </View>
-    </View>
-  );
-}
+const DecksListItem = ({title, questions}) =>(
+  <View style={styles.deck}>
+    <Text style={styles.deckTitle}>{title}</Text>
+    <Text style={styles.deckCardsCounter}>{questions.length}</Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
   deck: {
     flexDirection: 'row',
-    marginTop: 12,
+    justifyContent: 'space-between',
+  },
+  deckTitle: {
+    fontSize: 20,
+  },
+  deckCardsCounter: {
+    fontSize: 20, color: colors.TEXT_COLOR,
   },
 });
+
+export default DecksListItem;
