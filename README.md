@@ -1,4 +1,12 @@
-# UdaciCards
+# mobile-flashcards
+A mobile application that allows users to study collections of flashcards.
 
-The app will allow users to create different categories of flashcards called
-"decks", add flashcards to those decks, then take quizzes on those decks.
+## Requirements
+   - Android or iOS emulators || Expo app installed on a physical device
+   - Node
+   - Yarn
+
+## Installation
+```js
+yarn install && yarn start --reset-cache
+```

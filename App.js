@@ -1,25 +1,34 @@
 import React from 'react';
+import {View, StatusBar} from 'react-native';
+import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import {StyleSheet, View, StatusBar} from 'react-native';
+import reducer from './reducers';
+import {blue} from './utils/colors';
+import {Constants} from 'expo';
+import {setLocalNotification} from './utils/helpers';
+import Navigator from './utils/Navigator';
 
-import configureStore from './utils/configureStore';
-import Navigator from './utils/routes';
-
-const store = configureStore();
-
-const Root = () => (
-  <Provider store={store}>
-    <View style={styles.container}>
-      <StatusBar animated={true} />
-      <Navigator />
+function UdaciStatusBar({backgroundColor, ...props}) {
+  return (
+    <View style={{backgroundColor, height: Constants.statusBarHeight}}>
+      <StatusBar translucent backgroundColor={backgroundColor} {...props} />
     </View>
-  </Provider>
-);
+  );
+}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification();
+  }
 
-export default Root;
+  render() {
+    return (
+      <Provider store={createStore(reducer)}>
+        <View style={{flex: 1}}>
+          <UdaciStatusBar backgroundColor={blue} barStyle="light-content" />
+          <Navigator />
+        </View>
+      </Provider>
+    );
+  }
+}
