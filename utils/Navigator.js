@@ -13,7 +13,7 @@ export const Tabs = new TabNavigator(
       navigationOptions: {
         tabBarLabel: 'Decks',
         /* eslint-disable react/display-name */
-        tabBarIcon: ({tintColor}) => <Ionicons name="ios-bookmarks" size={30} color={tintColor} />,
+        tabBarIcon: ({tintColor}) => <Ionicons name="ios-list" size={30} color={tintColor} />,
       },
     },
     AddDeck: {

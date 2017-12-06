@@ -22,7 +22,7 @@ const createNotification = () => ({
   },
 });
 
-export function setLocalNotification() {
+export const setLocalNotification = () => {
   if (Platform.OS === 'ios' && eventSubscription === null) {
     eventSubscription = Notifications.addListener((x) => {
       Alert.alert(
@@ -54,4 +54,4 @@ export function setLocalNotification() {
         });
       }
     });
-}
+};

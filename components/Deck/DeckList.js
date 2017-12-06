@@ -17,11 +17,7 @@ export class DeckList extends Component {
     const {dispatch} = this.props;
 
     fetchDecks()
-      .then((decks) => dispatch(receiveDecks(decks)))
-      .then((dd) => {
-        /* do something */
-      })
-      .then(() => this.setState(() => ({ready: true})));
+      .then((decks) => dispatch(receiveDecks(decks)));
   }
   renderItem = ({item}) => (
     <View style={styles.item}>

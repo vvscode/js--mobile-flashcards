@@ -20,6 +20,10 @@ export class AddDeck extends Component {
     const entry = this.state;
     const {decks} = this.props;
 
+    if (!entry.text) {
+      return;
+    }
+
     if (decks[entry.text]) {
       return Alert.alert(
         'Deck Exists',
