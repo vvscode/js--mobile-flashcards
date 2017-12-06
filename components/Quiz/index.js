@@ -1,2 +1,2 @@
-export * from './NewQuestionView';
+export * from './QuestionCreate';
 export * from './QuizView';

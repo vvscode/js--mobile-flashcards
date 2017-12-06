@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import {createDeck} from '../../utils/api';
 import {connect} from 'react-redux';
-import {addDeck} from '../../actions/index';
+import {deckCreate} from '../../actions/index';
 import * as colors from '../../utils/colors';
 import {TextInButton} from '../common';
 
@@ -32,7 +32,7 @@ export class AddDeck extends Component {
     } else {
       const newDeck = {[entry.text]: {title: entry.text, questions: []}};
 
-      this.props.dispatch(addDeck(newDeck));
+      this.props.dispatch(deckCreate(newDeck));
       createDeck(newDeck);
 
       this.setState({text: ''});

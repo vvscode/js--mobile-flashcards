@@ -6,7 +6,7 @@ import {
   View,
 } from 'react-native';
 import {connect} from 'react-redux';
-import {receiveDecks} from '../../actions/index';
+import {decksGet} from '../../actions/index';
 import {fetchDecks} from '../../utils/api';
 import DecksListItem from './DecksListItem';
 import * as colors from '../../utils/colors';
@@ -17,7 +17,7 @@ export class DeckList extends Component {
     const {dispatch} = this.props;
 
     fetchDecks()
-      .then((decks) => dispatch(receiveDecks(decks)));
+      .then((decks) => dispatch(decksGet(decks)));
   }
   renderItem = ({item}) => (
     <View style={styles.item}>

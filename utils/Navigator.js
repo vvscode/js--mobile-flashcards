@@ -3,7 +3,7 @@ import {StackNavigator, TabNavigator} from 'react-navigation';
 import {FontAwesome, Ionicons} from '@expo/vector-icons';
 import * as colors from './colors';
 import {AddDeckConnected, DeckListConnected, IndivdualDeckViewConnected} from '../components/Deck';
-import {QuizView, NewQuestionViewConnected} from '../components/Quiz';
+import {QuizView, QuestionCreateConnected} from '../components/Quiz';
 import {isIOS} from './platform';
 
 export const Tabs = new TabNavigator(
@@ -60,8 +60,8 @@ export default new StackNavigator({
       },
     },
   },
-  NewQuestionView: {
-    screen: NewQuestionViewConnected,
+  QuestionCreate: {
+    screen: QuestionCreateConnected,
     navigationOptions: {
       title: 'Add Card',
       headerTintColor: colors.BACKGROUND_LIGHT,

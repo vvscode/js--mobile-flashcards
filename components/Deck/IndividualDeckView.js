@@ -36,7 +36,7 @@ export class IndivdualDeckView extends Component {
         <View style={[styles.group, {flex: 2, justifyContent: 'space-around'}]}>
           <TextInButton
             onPress={() => {
-              this.props.navigation.navigate('NewQuestionView', {
+              this.props.navigation.navigate('QuestionCreate', {
                 title,
                 questions,
               });

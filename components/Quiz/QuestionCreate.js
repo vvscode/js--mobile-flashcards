@@ -7,12 +7,12 @@ import {
   TextInput,
 } from 'react-native';
 import * as colors from '../../utils/colors';
-import {addCard} from '../../actions/index';
+import {cardCreate} from '../../actions/index';
 import {connect} from 'react-redux';
 import {addCardDeck} from '../../utils/api';
 import {TextInButton} from '../common/index';
 
-class NewQuestionView extends Component {
+class QuestionCreate extends Component {
   state = {
     questionText: '',
     answerText: '',
@@ -35,7 +35,7 @@ class NewQuestionView extends Component {
       Alert.alert(alert.title, alert.content);
     }
     const params = {title, questions, questionText, answerText};
-    this.props.dispatch(addCard(params));
+    this.props.dispatch(cardCreate(params));
     addCardDeck({
       card: {question: questionText, answer: answerText},
       deckName: title,
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.BACKGROUND_LIGHT,
   },
   input: {
-    width: 300,
+    width: 250,
     height: 44,
     padding: 8,
     borderWidth: 1,
@@ -99,4 +99,4 @@ function mapStateToProps(state) {
     decks: state,
   };
 }
-export const NewQuestionViewConnected = connect(mapStateToProps)(NewQuestionView);
+export const QuestionCreateConnected = connect(mapStateToProps)(QuestionCreate);
