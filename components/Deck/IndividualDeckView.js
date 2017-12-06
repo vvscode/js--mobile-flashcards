@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import {Animated, StyleSheet, Text, View} from 'react-native';
-import * as colors from '../utils/colors';
-import TextInButton from './TextInButton';
+import * as colors from '../../utils/colors';
+import TextInButton from '../TextInButton';
 
-class IndivdualDeckView extends Component {
+export class IndivdualDeckView extends Component {
   state = {
     bounceValue: new Animated.Value(1),
   };
@@ -35,7 +35,6 @@ class IndivdualDeckView extends Component {
         </View>
         <View style={[styles.group, {flex: 2, justifyContent: 'space-around'}]}>
           <TextInButton
-            style={{backgroundColor: colors.BTN_COLOR_LIGTH}}
             onPress={() => {
               this.props.navigation.navigate('NewQuestionView', {
                 title,
@@ -85,4 +84,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(IndivdualDeckView);
+export const IndivdualDeckViewConnected = connect(mapStateToProps)(IndivdualDeckView);

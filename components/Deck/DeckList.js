@@ -6,13 +6,13 @@ import {
   View,
 } from 'react-native';
 import {connect} from 'react-redux';
-import {receiveDecks} from '../actions';
-import {fetchDecks} from '../utils/api';
+import {receiveDecks} from '../../actions/index';
+import {fetchDecks} from '../../utils/api';
 import DecksListItem from './DecksListItem';
-import * as colors from '../utils/colors';
-import {isIOS} from '../utils/platform';
+import * as colors from '../../utils/colors';
+import {isIOS} from '../../utils/platform';
 
-class DeckList extends Component {
+export class DeckList extends Component {
   componentDidMount() {
     const {dispatch} = this.props;
 
@@ -76,4 +76,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps)(DeckList);
+export const DeckListConnected = connect(mapStateToProps)(DeckList);

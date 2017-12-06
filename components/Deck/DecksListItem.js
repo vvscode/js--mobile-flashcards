@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import * as colors from '../utils/colors';
+import * as colors from '../../utils/colors';
 
 export default function DecksListItem({title, questions}) {
   return (

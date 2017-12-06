@@ -6,13 +6,13 @@ import {
   Text,
   TextInput,
 } from 'react-native';
-import {createDeck} from '../utils/api';
+import {createDeck} from '../../utils/api';
 import {connect} from 'react-redux';
-import {addDeck} from '../actions';
-import * as colors from '../utils/colors';
-import TextInButton from './TextInButton';
+import {addDeck} from '../../actions/index';
+import * as colors from '../../utils/colors';
+import TextInButton from '../TextInButton';
 
-class AddDeck extends Component {
+export class AddDeck extends Component {
   state = {
     text: '',
   };
@@ -72,9 +72,11 @@ const styles = StyleSheet.create({
     margin: 20,
   },
 });
+
 function mapStateToProps(state) {
   return {
     decks: state,
   };
 }
-export default connect(mapStateToProps)(AddDeck);
+
+export const AddDeckConnected = connect(mapStateToProps)(AddDeck);

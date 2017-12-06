@@ -2,17 +2,15 @@ import React from 'react';
 import {StackNavigator, TabNavigator} from 'react-navigation';
 import {FontAwesome, Ionicons} from '@expo/vector-icons';
 import * as colors from './colors';
-import AddDeck from '../components/AddDeck';
-import DeckList from '../components/DeckList';
+import {AddDeckConnected, DeckListConnected, IndivdualDeckViewConnected} from '../components/Deck';
 import QuizView from '../components/QuizView';
-import IndividualDeckView from '../components/IndividualDeckView';
 import NewQuestionView from '../components/NewQuestionView';
 import {isIOS} from './platform';
 
 export const Tabs = new TabNavigator(
   {
     DeckList: {
-      screen: DeckList,
+      screen: DeckListConnected,
       navigationOptions: {
         tabBarLabel: 'Decks',
         /* eslint-disable react/display-name */
@@ -20,7 +18,7 @@ export const Tabs = new TabNavigator(
       },
     },
     AddDeck: {
-      screen: AddDeck,
+      screen: AddDeckConnected,
       navigationOptions: {
         tabBarLabel: 'Add',
         /* eslint-disable react/display-name */
@@ -33,10 +31,10 @@ export const Tabs = new TabNavigator(
       header: null,
     },
     tabBarOptions: {
-      activeTintColor: isIOS ? colors.BACKGROUND_DARK : colors.BACKGROUND_LIGTH,
+      activeTintColor: isIOS ? colors.BACKGROUND_DARK : colors.BACKGROUND_LIGHT,
       style: {
         height: 56,
-        backgroundColor: isIOS ? colors.BACKGROUND_LIGTH : colors.BACKGROUND_DARK,
+        backgroundColor: isIOS ? colors.BACKGROUND_LIGHT : colors.BACKGROUND_DARK,
         shadowColor: 'rgba(0, 0, 0, 0.24)',
         shadowOffset: {
           width: 0,
@@ -55,9 +53,9 @@ export default new StackNavigator({
     navigationOptions: {title: 'Home'},
   },
   IndividualDeckView: {
-    screen: IndividualDeckView,
+    screen: IndivdualDeckViewConnected,
     navigationOptions: {
-      headerTintColor: colors.BACKGROUND_LIGTH,
+      headerTintColor: colors.BACKGROUND_LIGHT,
       headerStyle: {
         backgroundColor: colors.BACKGROUND_DARK,
       },
@@ -67,7 +65,7 @@ export default new StackNavigator({
     screen: NewQuestionView,
     navigationOptions: {
       title: 'Add Card',
-      headerTintColor: colors.BACKGROUND_LIGTH,
+      headerTintColor: colors.BACKGROUND_LIGHT,
       headerStyle: {
         backgroundColor: colors.BACKGROUND_DARK,
       },
@@ -77,7 +75,7 @@ export default new StackNavigator({
     screen: QuizView,
     navigationOptions: {
       title: 'Quiz',
-      headerTintColor: colors.BACKGROUND_LIGTH,
+      headerTintColor: colors.BACKGROUND_LIGHT,
       headerStyle: {
         backgroundColor: colors.BACKGROUND_DARK,
       },
