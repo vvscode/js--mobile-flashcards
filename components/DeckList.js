@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {
   FlatList,
-  Platform,
   StyleSheet,
   TouchableOpacity,
   View,
@@ -11,6 +10,7 @@ import {receiveDecks} from '../actions';
 import {fetchDecks} from '../utils/api';
 import DecksListItem from './DecksListItem';
 import * as colors from '../utils/colors';
+import {isIOS} from '../utils/platform';
 
 class DeckList extends Component {
   componentDidMount() {
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   },
   item: {
     backgroundColor: colors.BACKGROUND_LIGHT,
-    borderRadius: Platform.OS === 'ios' ? 16 : 2,
+    borderRadius: isIOS ? 16 : 2,
     padding: 20,
     marginLeft: 10,
     marginRight: 10,

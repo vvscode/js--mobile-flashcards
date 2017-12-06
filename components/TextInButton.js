@@ -1,6 +1,7 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import * as colors from '../utils/colors';
+import {isIOS} from '../utils/platform';
 
 const styles = StyleSheet.create({
   iosBtn: {
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const btnStyle = Platform.OS === 'ios' ? styles.iosBtn : styles.AndroidBtn;
+const btnStyle = isIOS ? styles.iosBtn : styles.AndroidBtn;
 
 const TextInButton = ({children, onPress, style = {}}) => (
   <TouchableOpacity onPress={onPress} style={[btnStyle, style]}>

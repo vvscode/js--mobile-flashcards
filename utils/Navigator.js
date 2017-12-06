@@ -2,12 +2,12 @@ import React from 'react';
 import {StackNavigator, TabNavigator} from 'react-navigation';
 import {FontAwesome, Ionicons} from '@expo/vector-icons';
 import * as colors from './colors';
-import {Platform} from 'react-native';
 import AddDeck from '../components/AddDeck';
 import DeckList from '../components/DeckList';
 import QuizView from '../components/QuizView';
 import IndividualDeckView from '../components/IndividualDeckView';
 import NewQuestionView from '../components/NewQuestionView';
+import {isIOS} from './platform';
 
 export const Tabs = new TabNavigator(
   {
@@ -33,10 +33,10 @@ export const Tabs = new TabNavigator(
       header: null,
     },
     tabBarOptions: {
-      activeTintColor: Platform.OS === 'ios' ? colors.BACKGROUND_DARK : colors.BACKGROUND_LIGTH,
+      activeTintColor: isIOS ? colors.BACKGROUND_DARK : colors.BACKGROUND_LIGTH,
       style: {
         height: 56,
-        backgroundColor: Platform.OS === 'ios' ? colors.BACKGROUND_LIGTH : colors.BACKGROUND_DARK,
+        backgroundColor: isIOS ? colors.BACKGROUND_LIGTH : colors.BACKGROUND_DARK,
         shadowColor: 'rgba(0, 0, 0, 0.24)',
         shadowOffset: {
           width: 0,
