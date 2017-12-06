@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import * as colors from '../utils/colors';
-import {isIOS} from '../utils/platform';
+import * as colors from '../../utils/colors';
+import {isIOS} from '../../utils/platform';
 
 const styles = StyleSheet.create({
   iosBtn: {
@@ -32,12 +32,9 @@ const styles = StyleSheet.create({
 
 const btnStyle = isIOS ? styles.iosBtn : styles.AndroidBtn;
 
-const TextInButton = ({children, onPress, style = {}}) => (
+export const TextInButton = ({children, onPress, style = {}}) => (
   <TouchableOpacity onPress={onPress} style={[btnStyle, style]}>
     <Text style={[styles.btnText, style]}>{children}</Text>
   </TouchableOpacity>
 );
-
-export default TextInButton;
-
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import * as colors from '../utils/colors';
-import TextInButton from './TextInButton';
+import {TextInButton} from './common';
 
 export default function QuizScoring({onCorrect, onIncorrect}) {
   return (

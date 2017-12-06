@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {Animated, StyleSheet, Text, View} from 'react-native';
 import * as colors from '../../utils/colors';
-import TextInButton from '../TextInButton';
+import {TextInButton} from '../common';
 
 export class IndivdualDeckView extends Component {
   state = {

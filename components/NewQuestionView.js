@@ -10,7 +10,7 @@ import * as colors from '../utils/colors';
 import {addCard} from '../actions';
 import {connect} from 'react-redux';
 import {addCardDeck} from '../utils/api';
-import TextInButton from './TextInButton';
+import {TextInButton} from './common';
 
 class NewQuestionView extends Component {
   state = {

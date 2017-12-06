@@ -10,7 +10,7 @@ import {createDeck} from '../../utils/api';
 import {connect} from 'react-redux';
 import {addDeck} from '../../actions/index';
 import * as colors from '../../utils/colors';
-import TextInButton from '../TextInButton';
+import {TextInButton} from '../common';
 
 export class AddDeck extends Component {
   state = {

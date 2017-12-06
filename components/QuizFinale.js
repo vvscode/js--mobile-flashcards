@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import * as colors from '../utils/colors';
 import {clearLocalNotification} from '../utils/helpers';
-import TextInButton from './TextInButton';
+import {TextInButton} from './common';
 
 export default class QuizFinale extends Component {
   componentDidMount() {

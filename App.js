@@ -6,7 +6,7 @@ import reducer from './reducers';
 import * as colors from './utils/colors';
 import {setLocalNotification} from './utils/helpers';
 import Navigator from './utils/Navigator';
-import StatusBar from './components/StatusBar';
+import {StatusBar} from './components/common';
 
 export default class App extends React.Component {
   componentDidMount() {
